@@ -1,0 +1,5 @@
+---
+- name: ensure telegraf is installed
+  yum:
+    name: "https://dl.influxdata.com/telegraf/releases/telegraf-{{ telegraf_version }}.x86_64.rpm"
+    state: present

@@ -1,0 +1,4 @@
+---
+telegraf_version: 1.0.1
+telegraf_basedir: /etc/telegraf
+telegraf_configfile: "{{ telegraf_basedir }}/telegraf.conf"

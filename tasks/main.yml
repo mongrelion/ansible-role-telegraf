@@ -1,0 +1,5 @@
+---
+- include: checks.yml
+- include: install.yml
+  when: not telegraf_installed or telegraf_outdated
+- include: config.yml

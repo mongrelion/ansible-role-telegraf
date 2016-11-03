@@ -1,0 +1,12 @@
+---
+- name: get installer
+  get_url:
+    url: "https://dl.influxdata.com/telegraf/releases/telegraf_{{ telegraf_version }}_amd64.deb"
+    dest: "{{ debian_installer }}"
+    checksum: md5:6325f8acf47d17aa3ff309259a042005
+
+- name: ensure telegraf is installed
+  command: dpkg -i {{ debian_installer }}
+
+- name: remove installer
+  file: path={{ debian_installer }} state=absent

@@ -1,0 +1,12 @@
+---
+- name: check for telegraf installation
+  shell: command -v telegraf > /dev/null && telegraf version | grep -o -E "[0-9]\.[0-9]\.[0-9]" || echo "no"
+  register: telegraf_check
+  changed_when: no
+
+- set_fact:
+    telegraf_installed: "{{ telegraf_check.stdout != 'no' }}"
+    telegraf_installed_version: "{{ telegraf_check.stdout }}"
+
+- set_fact:
+    telegraf_outdated: "{{ telegraf_installed_version | version_compare(telegraf_version, '<') }}"
