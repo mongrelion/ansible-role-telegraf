@@ -5,3 +5,5 @@ telegraf_configfile: "{{ telegraf_basedir }}/telegraf.conf"
 
 db_url: http://127.0.0.1:8086
 db_name: telegraf
+
+prometheus_url: ""
