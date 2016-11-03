@@ -1,1 +1,8 @@
 ---
+- name: ensure telegraf config file is present
+  template: src=templates/telegraf.j2.conf dest={{ configfile }}
+  notify:
+    - restart telegraf
+
+- name: ensure telegraf starts on boot
+  service: name=telegraf enabled=yes

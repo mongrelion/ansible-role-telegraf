@@ -2,3 +2,6 @@
 telegraf_version: 1.0.1
 telegraf_basedir: /etc/telegraf
 telegraf_configfile: "{{ telegraf_basedir }}/telegraf.conf"
+
+db_url: http://127.0.0.1:8086
+db_name: telegraf

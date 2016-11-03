@@ -1,2 +1,3 @@
 ---
 debian_installer: /tmp/telegraf.deb
+configfile: /etc/telegraf/telegraf.conf
